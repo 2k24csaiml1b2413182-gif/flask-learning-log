@@ -1,0 +1,77 @@
+body{
+    margin : 0;
+    padding : 0;
+    font-family: 'Segoe UI',sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+h1, h2 {
+    color: #1DB954;
+}
+
+nav{
+    background-color: #1DB954;
+    color: #121212;
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.container{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.stat-card {
+  background-color: #1e1e1e;
+  border: 1px solid #1DB954;
+  border-radius: 999px;
+  padding: 20px;
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1DB954;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #aaaaaa;
+  margin-top: 4px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.tag {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.tag-favorite {
+  background-color: #1DB954;
+  color: #121212;
+  font-weight: bold;
+}

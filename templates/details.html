@@ -1,0 +1,48 @@
+{%extends "base.html"%} {%block title%}Details{%endblock%} {%block content%}
+<div class="container">
+  <h1>{{username}}'s Details</h1>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">{{repo_count}}</div>
+      <div class="stat-label">Repositories</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">{{ "✅" if is_active else "❌" }}</div>
+      <div class="stat-label">Active</div>
+    </div>
+  </div>
+
+  {% if languages %}
+  <h3>Languages Used</h3>
+  <div class="tag-list">
+    {% for lang in languages %} {% if lang == 'Python' %}
+    <span class="tag tag-favorite">{{lang}} ★</span>
+    {% else %}
+    <span class="tag">{{lang}}</span>
+    {% endif %} {% endfor %}
+  </div>
+  <!-- <h3>Languages Used :</h3>
+  <ul>
+    {% for lang in languages %}
+    <li>{{lang}}</li>
+    {% endfor %}
+  </ul>
+
+  <br /><br />
+
+  {% for lang in languages %} {% if lang == 'Python'%}
+  <li><strong>{{lang}}</strong> (favourite ! )</li>
+  {% else %}
+  <li>{{lang}}</li>
+  {% endif %} {% endfor %} {% else %} -->
+  <p>No languages found.</p>
+
+  {% endif %} {% if is_active %}
+  <p>Status : ✅ Active</p>
+  {% else %}
+  <p>Status : ❌ Inactive</p>
+  {% endif %}
+</div>
+
+{%endblock%}

@@ -1,0 +1,21 @@
+{% extends "base.html"%} {% block title %}Home Page{%endblock%} {%block
+content%}
+<div class="container">
+  <h1>Welcome !</h1>
+  <h2>Enter a GitHub username to see stats:</h2>
+
+  <div class="stat-card">
+    <form action="/details" method="get">
+      <div class="stat-number">
+        <input
+          type="text"
+          name="username"
+          placeholder="e.g. torvalds"
+          required
+        />
+        <button type="submit">Get Stats</button>
+      </div>
+    </form>
+  </div>
+</div>
+{%endblock%}
