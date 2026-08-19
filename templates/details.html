@@ -7,9 +7,30 @@
       <div class="stat-number">{{repo_count}}</div>
       <div class="stat-label">Repositories</div>
     </div>
+
     <div class="stat-card">
       <div class="stat-number">{{ "✅" if is_active else "❌" }}</div>
       <div class="stat-label">Active</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-number">{{followers}}</div>
+      <div class="stat-label">Followers</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-number">{{top_language}}</div>
+      <div class="stat-label">#1 Language</div>
+    </div>
+
+    <div class="stat-card">
+      {%if account_age_years >=1%}
+      <div class="stat-number">{{account_age_years}}</div>
+      <div class="stat-label">Years on GitHub</div>
+      {%else%}
+      <div class="stat-number">{{account_age_days}}</div>
+      <div class="stat-label">Days on GitHub</div>
+      {%endif%}
     </div>
   </div>
 
@@ -20,29 +41,15 @@
     <span class="tag tag-favorite">{{lang}} ★</span>
     {% else %}
     <span class="tag">{{lang}}</span>
-    {% endif %} {% endfor %}
+    {% endif %} {% endfor %} {%else%}
+    <p>No languages found.</p>
+    {% endif %}
   </div>
-  <!-- <h3>Languages Used :</h3>
-  <ul>
-    {% for lang in languages %}
-    <li>{{lang}}</li>
-    {% endfor %}
-  </ul>
-
-  <br /><br />
-
-  {% for lang in languages %} {% if lang == 'Python'%}
-  <li><strong>{{lang}}</strong> (favourite ! )</li>
-  {% else %}
-  <li>{{lang}}</li>
-  {% endif %} {% endfor %} {% else %} -->
-  <p>No languages found.</p>
-
-  {% endif %} {% if is_active %}
-  <p>Status : ✅ Active</p>
-  {% else %}
-  <p>Status : ❌ Inactive</p>
-  {% endif %}
+  <h3>Language Breakdown</h3>
+  <script>
+    const languageCounts = {{ language_counts | tojson }};
+  </script>
+  <canvas id="languageChart"></canvas>
 </div>
 
 {%endblock%}

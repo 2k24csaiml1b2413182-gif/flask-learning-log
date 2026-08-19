@@ -1,0 +1,9 @@
+updations:
+
+use a bar chart for top languages 
+use the depth effect for stat cards
+dynamic / colourful design (stat card changes colour on hovering)
+show project summary - integrate AI for summarizing via readme file . 
+display projects made with the help of AI by using "Made with Claude as an Assistant "/ " Made with Gemini" stamps in the readme
+make it more fun and chaotic
+use name instead of username while displaying stats
